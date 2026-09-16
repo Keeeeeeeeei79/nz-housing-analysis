@@ -1,0 +1,35 @@
+name: dbt build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install dbt-duckdb pandas openpyxl
+
+      - name: Load raw data
+        run: python scripts/clean_hm10.py
+
+      - name: Load into DuckDB
+        run: python scripts/model_hm10.py
+
+      - name: dbt run
+        working-directory: nz_housing_dbt
+        run: dbt run
+
+      - name: dbt test
+        working-directory: nz_housing_dbt
+        run: dbt test
