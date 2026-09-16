@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_housing
+    description: "RBNZ M10 Housing data - cleaned and typed"
+    columns:
+      - name: quarter_date
+        tests:
+          - unique
+          - not_null
+      - name: hpi
+        tests:
+          - not_null
+      - name: house_sales
+        tests:
+          - not_null
+
+  - name: mart_housing_kpi
+    description: "Housing KPIs with YoY changes and rolling averages"
+    columns:
+      - name: quarter_date
+        tests:
+          - unique
+          - not_null

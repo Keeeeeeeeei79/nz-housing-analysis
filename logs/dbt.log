@@ -1,0 +1,31 @@
+[0m16:58:18.170009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e502160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fa1ed30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fa1e430>]}
+
+
+============================== 16:58:18.180810 | 21a91fcb-06e5-4f21-8ee5-ef9eee2abc46 ==============================
+[0m16:58:18.180810 [info ] [MainThread]: Running with dbt=1.10.23
+[0m16:58:18.181781 [debug] [MainThread]: running dbt with arguments {'indirect_selection': 'eager', 'write_json': 'True', 'quiet': 'False', 'empty': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'use_experimental_parser': 'False', 'use_colors': 'True', 'target_path': 'None', 'warn_error': 'None', 'partial_parse': 'True', 'no_print': 'None', 'log_cache_events': 'False', 'invocation_command': 'dbt init nz_housing_dbt', 'cache_selected_only': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/kei/.dbt', 'printer_width': '80'}
+[0m16:58:18.217449 [warn ] [MainThread]: [[33mWARNING[0m]: This version of dbt is deprecated and no longer receives regular patches, including for known bugs. Please upgrade to a newer supported version of dbt for new projects: https://docs.getdbt.com/docs/dbt-versions?utm_source=dbt-cli
+[0m16:58:18.218236 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecated_version_invocation', 'label': '21a91fcb-06e5-4f21-8ee5-ef9eee2abc46', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f9df3a0>]}
+[0m16:58:18.220872 [debug] [MainThread]: Starter project path: /Users/kei/projects/nz-housing-analysis/.venv/lib/python3.9/site-packages/dbt/include/starter_project
+[0m16:58:18.239766 [info ] [MainThread]: 
+Your new dbt project "nz_housing_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:58:18.240476 [info ] [MainThread]: Setting up your profile.
+[0m16:58:36.293176 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 18.295954, "process_in_blocks": "0", "process_kernel_time": 0.49155, "process_mem_max_rss": "104206336", "process_out_blocks": "0", "process_user_time": 2.752096}
+[0m16:58:36.294139 [debug] [MainThread]: Command `dbt init` succeeded at 16:58:36.293935 after 18.30 seconds
+[0m16:58:36.294778 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e502160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10fa00b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f7c1430>]}
+[0m16:58:36.295443 [debug] [MainThread]: Flushing usage events
+[0m16:58:37.604438 [debug] [MainThread]: An error was encountered while trying to flush usage events

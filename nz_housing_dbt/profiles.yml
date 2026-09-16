@@ -1,0 +1,6 @@
+nz_housing_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../housing.duckdb
