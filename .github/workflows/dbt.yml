@@ -20,16 +20,20 @@ jobs:
       - name: Install dependencies
         run: pip install dbt-duckdb pandas openpyxl
 
-      - name: Load raw data
-        run: python scripts/clean_hm10.py
-
-      - name: Load into DuckDB
-        run: python scripts/model_hm10.py
+      - name: Load seeds into DuckDB
+        run: |
+          python -c "
+          import duckdb, pandas as pd
+          con = duckdb.connect('housing.duckdb')
+          df = pd.read_csv('nz_housing_dbt/seeds/hm10_clean.csv')
+          con.execute('CREATE OR REPLACE TABLE raw_housing AS SELECT * FROM df')
+          print('raw_housing loaded:', con.execute('SELECT COUNT(*) FROM raw_housing').fetchone())
+          "
 
       - name: dbt run
         working-directory: nz_housing_dbt
-        run: dbt run
+        run: dbt run --exclude resource_type:seed
 
       - name: dbt test
         working-directory: nz_housing_dbt
-        run: dbt test
+        run: dbt test --exclude resource_type:seed
